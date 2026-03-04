@@ -1,6 +1,11 @@
-name: Sync docs on PR merge
+name: Sync docs on push & PR merge
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/prds/**'
   pull_request:
     types: [closed]
     paths:
@@ -8,14 +13,16 @@ on:
 
 jobs:
   sync_docs:
-    if: github.event.pull_request.merged == true
+    if: |
+      github.event_name == 'push' || 
+      (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Sync to Google Docs
-        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.4
+        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.5
         with:
           folder_path: "docs/prds"
           google_service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
