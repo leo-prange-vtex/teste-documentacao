@@ -15,8 +15,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync to Google Docs
-        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.2
+        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.3
         with:
           folder_path: "docs/prds"
           google_service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
           google_doc_id: "${{ secrets.GOOGLE_DOC_ID }}"
+          github_token: "${{ github.token }}"
