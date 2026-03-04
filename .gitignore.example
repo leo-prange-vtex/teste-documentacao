@@ -1,0 +1,38 @@
+# Estrutura do Repositório de Documentação de Teste
+
+Este repositório demonstra a integração da GitHub Action `sync-sheets-on-pr-merge`.
+
+## 🏗️ Estrutura
+
+### Pasta `docs/prds/`
+Contém documentação de requisitos de produtos que será sincronizada com Google Docs quando um PR for mergeado para a branch principal.
+
+### Workflow `.github/workflows/sync-docs.yml`
+Configura a automação para executar a action quando PRs são mergeados.
+
+## 🚀 Próximos Passos
+
+1. **Configurar Secrets**: Adicione `GOOGLE_SERVICE_ACCOUNT` e `GOOGLE_DOC_ID`
+2. **Testar a Action**: Crie um PR com mudanças em `docs/prds/`
+3. **Verificar Sincronização**: Confirme que o Google Doc foi atualizado
+4. **Adaptar para seu Projeto**: Customize a pasta monitorada e o workflow conforme necessário
+
+## 📖 Documentação
+
+Para mais detalhes, consulte:
+- [Documentação da Action](https://github.com/leo-prange-vtex/sync-sheets-on-pr-merge)
+- [README deste repositório](README.md)
+
+## ✨ Exemplo de Uso Real
+
+Este repositório serve como template para integrar a action em seus projetos:
+
+1. Crie uma pasta de docs (ex: `docs/`, `specifications/`, etc)
+2. Copie o workflow `.github/workflows/sync-docs.yml`
+3. Ajuste o `folder_path` conforme sua estrutura
+4. Configure os secrets do Google
+5. Pronto! A sincronização automática funcionará
+
+---
+
+*Repositório de teste criado em 04/03/2026*
