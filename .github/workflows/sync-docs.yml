@@ -20,4 +20,4 @@ jobs:
           folder_path: "docs/prds"
           google_service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
           google_doc_id: "${{ secrets.GOOGLE_DOC_ID }}"
-          github_token: "${{ secrets.GH_TOKEN }}"
+          github_token: "${{ github.token }}"
