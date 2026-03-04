@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync to Google Docs
-        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.6
+        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.8
         with:
           folder_path: "docs/prds"
           google_service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
