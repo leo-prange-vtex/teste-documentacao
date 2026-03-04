@@ -1,1 +1,22 @@
-name: Sync docs on PR merge\n\non:\n  pull_request:\n    types: [closed]\n    paths:\n      - 'docs/prds/**'\n\njobs:\n  sync_docs:\n    if: github.event.pull_request.merged == true\n    runs-on: ubuntu-latest\n    steps:\n      - name: Checkout\n        uses: actions/checkout@v4\n\n      - name: Sync to Google Docs\n        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.1\n        with:\n          folder_path: \"docs/prds\"\n          google_service_account: \"${{ secrets.GOOGLE_SERVICE_ACCOUNT }}\"\n          google_doc_id: \"${{ secrets.GOOGLE_DOC_ID }}\"\n
+name: Sync docs on PR merge
+
+on:
+  pull_request:
+    types: [closed]
+    paths:
+      - 'docs/prds/**'
+
+jobs:
+  sync_docs:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync to Google Docs
+        uses: leo-prange-vtex/sync-sheets-on-pr-merge@v1.0.1
+        with:
+          folder_path: "docs/prds"
+          google_service_account: "${{ secrets.GOOGLE_SERVICE_ACCOUNT }}"
+          google_doc_id: "${{ secrets.GOOGLE_DOC_ID }}"
