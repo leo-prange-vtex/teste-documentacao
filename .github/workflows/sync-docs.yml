@@ -23,8 +23,6 @@ jobs:
 
       - name: Sync to Google Docs
         uses: vtex/tooling-sync-gh-docs@v1.0.0
-        env:
-          GOOGLE_SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
         with:
           google_doc_id: ${{ secrets.GOOGLE_DOC_ID }}
           target_folder: docs/prds
