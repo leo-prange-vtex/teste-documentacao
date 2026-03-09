@@ -14,7 +14,7 @@ on:
 jobs:
   sync_docs:
     if: |
-      github.event_name == 'push' || 
+      github.event_name == 'push' ||
       (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
     steps:
@@ -22,7 +22,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Sync to Google Docs
-        uses: vtex/tooling-sync-gh-docs@v1.0.0
+        uses: vtex/tooling-sync-gh-docs@v1.0.1
         with:
+          google_service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
           google_doc_id: ${{ secrets.GOOGLE_DOC_ID }}
           target_folder: docs/prds

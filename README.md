@@ -1,6 +1,6 @@
 # Teste de Sincronização - Documentação
 
-Repositório de teste para a GitHub Action `sync-sheets-on-pr-merge`.
+Repositório de teste para a GitHub Action `tooling-sync-gh-docs`.
 
 Este repositório demonstra como usar a action para sincronizar automaticamente documentação com Google Docs quando um PR é mergeado.
 
@@ -69,8 +69,8 @@ Após fazer merge de um PR:
 
 ## 🔗 Referências
 
-- [Action no GitHub](https://github.com/leo-prange-vtex/sync-sheets-on-pr-merge)
-- [Documentação completa](https://github.com/leo-prange-vtex/sync-sheets-on-pr-merge/blob/main/README.md)
+- [Action no GitHub](https://github.com/vtex/tooling-sync-gh-docs)
+- [Documentação completa](https://github.com/vtex/tooling-sync-gh-docs/blob/main/README.md)
 
 ## 🤔 Dúvidas?
 
